@@ -15,8 +15,8 @@ pipeline {
 
     stage ('Build'){
       steps{
-        echo 'Checkout master branch'
-        checkout scm
+        echo 'Build project'
+        mvn clean package -DskipTests
       }
     }
 
