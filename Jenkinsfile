@@ -13,11 +13,18 @@ pipeline {
       }
     }
 
+    stage ('Build'){
+      steps{
+        echo 'Checkout master branch'
+        checkout scm
+      }
+    }
+
     stage('Copy') {
       steps {
         echo 'Copying files...'
         sh 'rm -rf /var/bievel/obision/*'
-        sh 'cp ./* /var/bievel/obision -R'
+        sh 'cp ./target/web-0.1.war /var/bievel/obision'
       }
     }
   }

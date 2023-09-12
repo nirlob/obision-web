@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.obision</groupId>
 	<artifactId>web</artifactId>
-	<version>0.1-SNAPSHOT</version>
+	<version>0.1</version>
 	<packaging>war</packaging>
 	<name>obision-web</name>
 	<description>Web of the Obision project</description>
