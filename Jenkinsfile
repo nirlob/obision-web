@@ -20,6 +20,7 @@ pipeline {
     stage ('Build'){
       steps{
         echo 'Build project'
+        sh 'echo $JAVA_HOME'
         sh 'mvn clean package -DskipTests'
       }
     }
