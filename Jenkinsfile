@@ -1,8 +1,12 @@
 pipeline {
   agent any
+  tools { 
+    maven 'Maven 3.3.9' 
+    jdk 'jdk17' 
+  }
 
   options {
-      skipDefaultCheckout(true)
+    skipDefaultCheckout(true)
   }
 
   stages{
