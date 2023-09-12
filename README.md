@@ -4,5 +4,3 @@
 - ./standalone.sh --debug
 # Ejecutar en Tomcat
 - ./mvnw clean spring-boot:run
-
-Prueba commit
