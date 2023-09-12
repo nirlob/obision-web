@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="~{fragments/header :: head}"></head>
+
+<body>
+    <div th:replace="~{fragments/header :: navbar}"></div>
+
+    <div class="band-background-white">
+        <div class="band-content p-4">
+            <h1>Screenshots</h1>
+
+            <p>Some screenshots examples of the Obision</p>
+
+            <div class="container text-center p-0">
+                <div class="row align-items-start">
+                    <div th:replace="~{fragments/screenshots/screenshot :: screenshot(image='images/screenshots/screenshot-0.png', title='Boot menu')}"></div>
+                    <div th:replace="~{fragments/screenshots/screenshot:: screenshot(image='images/screenshots/screenshot-1.png', title='Login screen')}"></div>
+                </div>
+
+                <div class="row align-items-start">
+                    <div th:replace="~{fragments/screenshots/screenshot:: screenshot(image='images/screenshots/screenshot-2.png', title='Input password')}"></div>
+                    <div th:replace="~{fragments/screenshots/screenshot:: screenshot(image='images/screenshots/screenshot-3.png', title='Main desktop')}"></div>
+                </div>
+
+                <div class="row align-items-start">
+                    <div th:replace="~{fragments/screenshots/screenshot:: screenshot(image='images/screenshots/screenshot-4.png', title='Settings')}"></div>
+                    <div th:replace="~{fragments/screenshots/screenshot:: screenshot(image='images/screenshots/screenshot-5.png', title='Some applications')}"></div>
+                </div>
+
+                <div class="row align-items-start">
+                    <div th:replace="~{fragments/screenshots/screenshot:: screenshot(image='images/screenshots/screenshot-6.png', title='Some applications')}"></div>
+                    <div th:replace="~{fragments/screenshots/screenshot:: screenshot(image='images/screenshots/screenshot-7.png', title='Applications panel')}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="~{fragments/modals :: imageModal}"></div>
+
+    <script src="js/modals.js"></script>
+
+    <div th:replace="~{fragments/footer}"></div>
+</body>
+</html>

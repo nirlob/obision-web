@@ -1,0 +1,13 @@
+<div th:fragment="release(version, changes, publishDate)">
+    <div class="card bg-primary mb-3">
+        <div class="card-header text-white d-flex justify-content-between">
+            <h5 class="mt-1"><strong>[[${version}]]</strong></h5>
+            <button type="button" class="btn btn-primary btn-sm" th:onclick="download([[${version}]])" data-bs-toggle="tooltip" data-bs-title="Download"><i class="fa-solid fa-download"></i></button>
+        </div>
+
+        <div class="card-body text-white">
+            <span>[[${publishDate}]]</span>
+            <ul class="mt-2 small">[(${changes})]</ul>
+        </div>
+    </div>
+</div>

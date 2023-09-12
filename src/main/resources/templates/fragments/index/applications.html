@@ -1,0 +1,47 @@
+<div th:fragment="applications" class="band-content p-4">
+    <h1>
+        Applications included
+    </h1>
+
+    <p>
+        Obision came with some applications for work and enjoy. Also has the Software Store for more applications.
+    </p>
+
+    <p>Some applications included in the distribution are</p>
+
+    <div class="container text-center p-0">
+        <div class="row align-items-start">
+            <div th:replace="~{:: application(icon='images/icons/applications/firefox.png', name='Firefox',
+                description='Browser for the web', url='https://www.mozilla.org/firefox/')}"></div>
+            <div th:replace="~{:: application(icon='images/icons/applications/evolution.svg', name='Evolution',
+                description='Mail client', url='https://wiki.gnome.org/Apps/Evolution')}"></div>
+            <div th:replace="~{:: application(icon='images/icons/applications/maps.png', name='Maps',
+                description='Maps application', url='https://wiki.gnome.org/Apps/Maps')}"></div>
+            <div th:replace="~{:: application(icon='images/icons/applications/contacts.png', name='Contacts',
+                description='Contacts of you accounts', url='https://wiki.gnome.org/Apps/Contacts')}"></div>
+        </div>
+
+        <div class="row align-items-start">
+            <div th:replace="~{:: application(icon='images/icons/applications/photos.png', name='Photos',
+                description='Show and manage your photos', url='https://wiki.gnome.org/Apps/Photos')}"></div>
+            <div th:replace="~{:: application(icon='images/icons/applications/videos.png', name='Videos',
+                description='Display videos in your desktop', url='https://wiki.gnome.org/Apps/Videos')}"></div>
+            <div th:replace="~{:: application(icon='/images/icons/applications/music.png', name='Music',
+                description='Listen to your favorite music', url='https://wiki.gnome.org/Apps/Music')}"></div>
+            <div th:replace="~{:: application(icon='/images/icons/applications/weather.svg', name='Weather',
+                description='Stay informed about the weather', url='https://wiki.gnome.org/Apps/Weather')}"></div>
+        </div>
+    </div>
+
+    <div class="d-flex flex-row-reverse small"><a href="/credits#applications">Show more included applications</a></div>
+
+    <p class="mt-2">And many more from the <a href="https://flathub.org" target="_blank">Flathub store</a> and <a href="https://packages.debian.org/stable/" target="_blank">Debian packages</a></p>
+</div>
+
+<div th:fragment="application(icon, name, description, url)" class="col m-2 p-0">
+    <a th:href="${url}" class="application-short p-4 btn btn-primary" target="_blank">
+        <img th:src="${icon}" th:alt="${name}" class="size-icon-normal">
+        <h5><strong>[[${name}]]</strong></h5>
+        <div class="mt-2 small" th:text="${description}"></div>
+    </a>
+</div>

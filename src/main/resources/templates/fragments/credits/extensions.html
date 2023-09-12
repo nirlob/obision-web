@@ -1,0 +1,28 @@
+<div th:fragment="extensions" class="band-content p-4">
+    <h2>
+        GNOME Extensions
+    </h2>
+
+    <div th:replace="~{:: extension(icon='images/icons/extensions/dashtodock.png', name='Dash to Dock',
+                description='A configurable dock for GNOME.', url='https://extensions.gnome.org/extension/307/dash-to-dock')}"></div>
+    <div th:replace="~{:: extension(icon='images/icons/extensions/desktopicons.png', name='Desktop Icons NG',
+                description='Adds icons to the desktop.', url='https://extensions.gnome.org/extension/2087/desktop-icons-ng-ding/')}"></div>
+    <div th:replace="~{:: extension(icon='images/icons/extensions/showdesktop.png', name='Show Desktop Applet',
+                description='Minimize/unminimize all open windows with a single click.', url='https://extensions.gnome.org/extension/4267/show-desktop-applet/')}"></div>
+    <div th:replace="~{:: extension(icon='images/icons/extensions/plugin.png', name='Dynamic Panel Transparency',
+                description='Fades your top panel to nothingness when there are no maximized.', url='https://extensions.gnome.org/extension/1011/dynamic-panel-transparency/')}"></div>
+    <div th:replace="~{:: extension(icon='images/icons/extensions/plugin.png', name='No activities button',
+                description='Hide the default activities button.', url='https://extensions.gnome.org/extension/3184/no-activities-button/')}"></div>
+    <div th:replace="~{:: extension(icon='images/icons/extensions/removableactivities.png', name='Removable Drive Menu',
+                description='A status menu for accessing and unmounting removable devices.', url='https://extensions.gnome.org/extension/7/removable-drive-menu/')}"></div>
+</div>
+
+<div th:fragment="extension(icon, name, description, url)" class="mb-2 p-0">
+    <a th:href="${url}" class="d-flex extension-long p-2 btn btn-primary" target="_blank">
+        <img th:src="${icon}" th:alt="${name}" class="size-icon-normal">
+        <div class="ps-2">
+            <h5 class="mb-0"><strong>[[${name}]]</strong></h5>
+            <div class="small" th:text="${description}"></div>
+        </div>
+    </a>
+</div>

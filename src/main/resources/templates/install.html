@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="~{fragments/header :: head}"></head>
+
+<body>
+    <div th:replace="~{fragments/header :: navbar}"></div>
+
+    <div class="band-background-white">
+        <div class="band-content p-4">
+            <h1>Install</h1>
+
+            <h3>Installation instructions</h3>
+            
+            <div class="card bg-primary mb-3">
+                <div class="card-body d-flex text-white">
+                    <div class="text-white bg-warning rounded-circle shadow-sm text-center fs-4 pt-1" style="width: 45px; height: 45px; min-width: 45px;">
+                        <strong>1</strong>
+                    </div>
+
+                    <div class="ps-3">
+                        <h5><i class="fa-solid fa-download me-2"></i><strong>Download</strong></h5>    
+                        Download the ISO file of the Obision, actally the last version is 
+                        <button class="btn btn-link link-warning p-0" style="margin-top: -5px;" th:onclick="download([[${lastVersion}]])">[[${lastVersion}]]</button> 
+                        or you can download <a href="releases" class="link-warning">other releases</a>.       
+                    </div>
+            
+                </div>
+            </div>
+
+            <div class="card bg-primary mb-3">
+                <div class="card-body d-flex text-white">
+                    <div class="text-white bg-warning rounded-circle shadow-sm text-center fs-4 pt-1" style="width: 45px; height: 45px; min-width: 45px;">
+                        <strong>2</strong>
+                    </div>
+
+                    <div class="ps-3 w-100">
+                        <h5><i class="fa-solid fa-compact-disc me-2"></i><strong>Using the ISO file</strong></h5>    
+                        <div class="mb-3">Once the iso file is downloaded you can use with some of this options.</div>
+
+                        <div class="accordion bg-primary" id="usingIsoAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        Install in a virtual machine
+                                    </button>
+                                </h2>
+
+                                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#usingIsoAccordion">
+                                    <div class="accordion-body">
+                                        <div class="mb-3">
+                                            Open the ISO file in a virtual machine like these 
+                                         </div>
+
+                                        <div th:replace="~{fragments/install/application(
+                                            icon='/images/icons/applications/virtualbox.png', 
+                                            name='VirtualBox',
+                                            description='VirtualBox is a powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use.', 
+                                            url='https://virtualbox.org')}">
+                                        </div>   
+                                        
+                                        <hr>
+                                    
+                                        <div th:replace="~{fragments/install/application(
+                                            icon='/images/icons/applications/vmware.png', 
+                                            name='VMWare',
+                                            description='Run Windows, Linux and BSD virtual machines on a Windows or Linux desktop with VMware Workstation Pro, the industry standard desktop hypervisor.', 
+                                            url='https://vmware.com')}">
+                                        </div>   
+                                       
+                                        <hr>
+                                    
+                                        <div th:replace="~{fragments/install/application(
+                                            icon='/images/icons/applications/gnome-boxes.png', 
+                                            name='GNOME Boxes',
+                                            description='GNOME Boxes is an application that gives you access to virtual machines, running locally or remotely. It also allows you to connect to a remote computer\'s display.', 
+                                            url='https://apps.gnome.org/es/app/org.gnome.Boxes')}">
+                                        </div>   
+                                       
+                                        <hr>
+                                    
+                                        <div th:replace="~{fragments/install/application(
+                                            icon='/images/icons/applications/kvm.png', 
+                                            name='KVM',
+                                            description='KVM is a full virtualization solution for Linux on x86 hardware containing virtualization extensions (Intel VT or AMD-V).', 
+                                            url='https://www.linux-kvm.org')}">
+                                        </div>   
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Generate a bootable USB stick
+                                    </button>
+                                </h2>
+
+                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#usingIsoAccordion">
+                                    <div class="accordion-body">
+                                        <div class="mb-3">Depending of the operating system you can use the following applications or commands</div>
+
+                                        <div class="mb-3">
+                                            <h3><strong>Linux</strong></h3>
+                                    
+                                            <div th:replace="~{fragments/install/application(
+                                                icon='/images/icons/applications/multi-writer.png', 
+                                                name='GNOME MultiWriter',
+                                                description='GNOME MultiWriter can be used to write an ISO file to multiple USB devices at once.', 
+                                                url='https://gitlab.gnome.org/GNOME/gnome-multi-writer')}">
+                                            </div>   
+    
+                                            <hr>
+
+                                            <div th:replace="~{fragments/install/application(
+                                                icon='/images/icons/applications/balena-etcher.png', 
+                                                name='Balena Etcher',
+                                                description='Flash OS images to SD cards & USB drives, safely and easily.', 
+                                                url='https://etcher.balena.io/')}">
+                                            </div>   
+
+                                            <hr>
+
+                                            <div class="d-flex">
+                                                <img src="/images/icons/applications/terminal.png" class="size-icon-normal">
+                                                <div class="ps-2">
+                                                    <h5 class="mb-0">Console</h5>
+                                                    <div class="small">
+                                                        <div>To write your ISO file run the following command (it may take a while)</div>
+                                                        <code>sudo dd if=/path/file.iso of=/dev/device bs=16M status=progress oflag=sync</code>
+                                                        <div class="mt-2">For search the <code>/dev/device</code> destination name insert the USB stick and open the disk utility in the system tools folder of applications screen</div>
+                                                        <a class="btn p-0" target="_blank" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="/images/screenshots/disk-utility.png" data-bs-title="Disk utility">
+                                                            <img class="py-2" src="/images/screenshots/disk-utility.png" width="430px" height="280px">
+                                                        </a>
+                                                        <div>Select the device and in the device field (<i>Dispositivo</i> in spanish) you have the destination, in this case <code>/dev/sda1</code>. The destination is that without the number, example: <code>/dev/sda</code></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <h3><strong>Windows</strong></h3>
+
+                                            <div th:replace="~{fragments/install/application(
+                                                icon='/images/icons/applications/rufus.png', 
+                                                name='Rufus',
+                                                description='Rufus is a utility that helps format and create bootable USB flash drives, such as USB keys/pendrives, memory sticks, etc.', 
+                                                url='https://rufus.ie')}">
+                                            </div>   
+                                            <hr>
+
+                                            <div th:replace="~{fragments/install/application(
+                                                icon='/images/icons/applications/balena-etcher.png', 
+                                                name='Balena Etcher',
+                                                description='Flash OS images to SD cards & USB drives, safely and easily.', 
+                                                url='https://etcher.balena.io/')}">
+                                            </div>   
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <h3><strong>MacOS</strong></h3>
+
+                                            <div th:replace="~{fragments/install/application(
+                                                icon='/images/icons/applications/balena-etcher.png', 
+                                                name='Balena Etcher',
+                                                description='Flash OS images to SD cards & USB drives, safely and easily.', 
+                                                url='https://etcher.balena.io/')}">
+                                            </div>   
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Burn to DVD
+                                    </button>
+                                </h2>
+
+                                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#usingIsoAccordion">
+                                    <div class="accordion-body">
+                                        <div class="mb-3">You can burn a DVD with this application depending of your operating system.</div>
+
+                                        <div class="mb-3">
+                                            <h3><strong>Linux</strong></h3>
+                                    
+                                            <div th:replace="~{fragments/install/application(
+                                                icon='/images/icons/applications/brasero.png', 
+                                                name='Brasero',
+                                                description='Brasero is a GNOME application to burn CD/DVD, designed to be as simple as possible. 
+                                                             It has some unique features to enable users to create their discs easily and quickly.', 
+                                                url='https://wiki.gnome.org/Apps/Brasero')}">
+                                            </div>   
+
+                                            <h3><strong>Windows</strong></h3>
+                                    
+                                            <div th:replace="~{fragments/install/application(
+                                                icon='/images/icons/applications/windows.png', 
+                                                name='File explorer',
+                                                description='File explorer can write directly your ISO file to DVD, for this follow the next steps
+                                                    <ol class=\'mt-2\'>
+                                                        <li>Open the folder where you have saved the ISO file.</li>
+                                                        <li>Right click on the .iso file.</li>
+                                                        <li>From the menu select Burn disc image.</li>
+                                                    </ol>', 
+                                                url='',
+                                                link='false')}">
+                                            </div>   
+
+                                            <h3><strong>MacOS</strong></h3>
+                                    
+                                            <div th:replace="~{fragments/install/application(
+                                                icon='/images/icons/applications/apple.svg', 
+                                                name='Finder',
+                                                description='File explorer can write directly your ISO file to DVD, for this follow the next steps
+                                                    <ol class=\'mt-2\'>
+                                                        <li>Open the Finder window on your Mac, browse the ISO file, and single click to select it.</li>
+                                                        <li>Select the ISO file, right-click, and choose the Burn Disk Image option.</li>
+                                                    </ol>', 
+                                                url='',
+                                                link='false')}">
+                                            </div>   
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div th:replace="~{fragments/install/installation}"></div>
+
+            <div class="card bg-primary mb-3">
+                <div class="card-body d-flex text-white">
+                    <div class="text-white bg-warning rounded-circle shadow-sm text-center fs-4 pt-1" style="width: 45px; height: 45px; min-width: 45px;">
+                        <strong>4</strong>
+                    </div>
+
+                    <div class="ps-3">
+                        <h5><i class="fa-solid fa-gear me-2"></i><strong>Post installation configuration</strong></h5>    
+                        <div class="mb-3">Once installed Obision you can personalize with three differents options that are in the system tools folder in applications screen.</div>
+
+                        <div class="d-flex">
+                            <img src="/images/icons/applications/settings.png" class="size-icon-normal">
+                            <div class="ps-2">
+                                <h5 class="mb-0"><strong>Gnome settings</strong></h5>
+                                <div class="small">The main application for configure Obision</div>
+                            </div>
+                        </div> 
+
+                        <hr>
+
+                        <div class="d-flex">
+                            <img src="/images/icons/applications/extensions.svg" class="size-icon-normal">
+                            <div class="ps-2">
+                                <h5 class="mb-0"><strong>Gnome extensions</strong></h5>
+                                <div class="small">Configure extensions of the desktop</div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="d-flex">
+                            <img src="/images/icons/applications/tweaks.svg" class="size-icon-normal">
+                            <div class="ps-2">
+                                <h5 class="mb-0"><strong>Gnome tweaks</strong></h5>
+                                <div class="small">Additional configurations</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-primary mb-3">
+                <div class="card-body d-flex text-white">
+                    <div class="text-white bg-warning rounded-circle shadow-sm text-center fs-4 pt-1" style="width: 45px; height: 45px; min-width: 45px;">
+                        <strong>5</strong>
+                    </div>
+
+                    <div class="ps-3">
+                        <h5><i class="fa-solid fa-table-cells-large me-2"></i><strong>Add / Remove applications</strong></h5>    
+                        <div class="mb-3">You can add or remove software applications with the following methods</div>
+
+                        <div class="d-flex">
+                            <img src="/images/icons/applications/software.png" class="size-icon-normal">
+                            <div class="ps-2">
+                                <h5 class="mb-0"><strong>Gnome software</strong></h5>
+                                <div class="small">Software store for apps</div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="d-flex">
+                            <img src="/images/icons/applications/synaptic.png" class="size-icon-normal">
+                            <div class="ps-2">
+                                <h5 class="mb-0"><strong>Synaptic package manager</strong></h5>
+                                <div class="small">Manage the Debian packages for applications, libraries, etc. This is in the Utilities folder of applications screen</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="~{fragments/modals :: imageModal}"></div>
+
+    <script src="js/modals.js"></script>
+    <script src="js/downloads.js"></script>
+
+    <div th:replace="~{fragments/footer}"></div>
+</body>
+</html>

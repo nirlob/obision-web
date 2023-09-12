@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="~{fragments/header :: head}"></head>
+
+<body>
+    <div th:replace="~{fragments/header :: navbar}"></div>
+
+    <div class="band-background-white">
+        <div class="band-content p-4">
+            <h1>Credits</h1>
+        </div>
+    </div>
+
+    <div class="band-background-white">
+        <div th:replace="~{fragments/credits/logos :: logos}"></div>
+    </div>
+
+    <div class="band-background-blue" id="applications">
+        <div th:replace="~{fragments/credits/applications :: applications}"></div>
+    </div>
+
+    <div class="band-background-white" id="extensions">
+        <div th:replace="~{fragments/credits/extensions :: extensions}"></div>
+    </div>
+
+    <div class="band-background-blue">
+        <div th:replace="~{fragments/credits/base-projects :: base-projects}"></div>
+    </div>
+
+    <div th:replace="~{fragments/footer}"></div>
+</body>
+</html>

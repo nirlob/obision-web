@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="~{fragments/header :: head}"></head>
+
+<body>
+    <div th:replace="~{fragments/header :: navbar}"></div>
+
+    <div class="band-background-white">
+        <div class="band-content p-4">
+            <h1>Releases</h1>
+
+            <p>Releases history</p>
+
+            <div th:each="release: ${releases}">
+                <div th:replace="~{fragments/releases/release(version=${release.version}, changes=${release.changes}, publishDate=${release.publishDate})}"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/tooltips.js"></script>
+    <script src="js/downloads.js"></script>
+
+    <div th:replace="~{fragments/footer}"></div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+html {
+    scroll-behavior:smooth
+}
+
+body {
+    margin: 0;
+}
+
+.header-footer-background {
+    background-color: #85b2f9 !important;
+}
+
+.band-background-white {
+    background-color: white;
+}
+
+.band-background-blue {
+    background-color: #d0e1fd;
+}
+
+.band-content {
+    margin: auto;
+    width: 700px;
+}
+
+.application-short {
+    height: 200px;
+    width: 152px;
+}
+
+.application-long {
+    width: 100%;
+    text-align: left;
+}
+
+.extension-short {
+    width: 318px;
+    height: 200px;
+}
+
+.extension-short img {
+    width: 50px;
+    height: 50px;
+    border-radius: 70px;
+    background-color: white;
+    padding: 5px;
+}
+
+.extension-long {
+    width: 100%;
+    text-align: left;
+}
+
+.extension-long img {
+    width: 50px;
+    height: 50px;
+    border-radius: 70px;
+    background-color: white;
+    padding: 5px;
+}
+
+.size-icon-normal {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    min-height: 70px;
+}
+
+/* Hides collapse button */
+.btn-collapse-hidden[aria-expanded="true"] {
+    display: none;
+}
+

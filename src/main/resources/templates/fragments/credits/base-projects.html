@@ -1,0 +1,22 @@
+<div th:fragment="base-projects" class="band-content p-4">
+    <h2>
+        Base projects
+    </h2>
+
+    <div th:replace="~{:: base-project(
+        icon='images/icons/base-projects/debian.png', 
+        name='Debian',
+        description='Debian is a complete Free Operating System. Debian is the base of many distributions like Ubuntu, Knoppix, Linux mint, SteamOS, Raspbian, etc.', 
+        url='https://www.debian.org/index.html')}">
+    </div>
+</div>
+
+<div th:fragment="base-project(icon, name, description, url)" class="mb-2 p-0">
+    <a th:href="${url}" class="d-flex application-long p-2 btn btn-primary" target="_blank">
+        <img th:src="${icon}" th:alt="${name}" class="size-icon-normal">
+        <div class="ps-2">
+            <h5 class="mb-0"><strong>[[${name}]]</strong></h5>
+            <div class="small" th:text="${description}"></div>
+        </div>
+    </a>
+</div>

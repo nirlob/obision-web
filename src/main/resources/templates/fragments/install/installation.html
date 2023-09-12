@@ -1,0 +1,248 @@
+<div th:fragment="installation" class="card bg-primary mb-3">
+    <div class="card-body d-flex text-white">
+        <div class="text-white bg-warning rounded-circle shadow-sm text-center fs-4 pt-1" style="width: 45px; height: 45px; min-width: 45px;">
+            <strong>3</strong>
+        </div>
+
+        <div class="ps-3">
+            <h5><i class="fa-solid fa-hard-drive me-2"></i><strong>Installation</strong></h5>    
+            <div class="mb-2">The Debian installer makes easy the installation throught a few steps. The list of steps are the following</div>
+
+            <div class="alert alert-primary mt-3" role="alert">
+                <strong>Note: </strong>These are the most common steps in the installation. Depending on the selected options, some other steps may be displayed.
+            </div>
+
+            <div class="accordion bg-primary" id="installAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#Install1" aria-expanded="false" aria-controls="Install1">
+                            1 - Select a language
+                        </button>
+                    </h2>
+
+                    <div id="Install1" class="accordion-collapse collapse" data-bs-parent="#installAccordion">
+                        <div class="accordion-body">
+                            Choose the language to be used for the installation process. 
+                            The selected language will also be the default language for the installed system.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#Install2" aria-expanded="false" aria-controls="Install2">
+                            2 - Select your location
+                        </button>
+                    </h2>
+
+                    <div id="Install2" class="accordion-collapse collapse" data-bs-parent="#installAccordion">
+                        <div class="accordion-body">
+                            The selected location will be used to set your time zone and also for example to help select the system locale.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#Install3" aria-expanded="false" aria-controls="Install3">
+                            3 - Configure the keyboard
+                        </button>
+                    </h2>
+
+                    <div id="Install3" class="accordion-collapse collapse" data-bs-parent="#installAccordion">
+                        <div class="accordion-body">
+                            Select your keyboard keymap distribution.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#Install4" aria-expanded="false" aria-controls="Install4">
+                            4 - Enter the hostname for this system
+                        </button>
+                    </h2>
+
+                    <div id="Install4" class="accordion-collapse collapse" data-bs-parent="#installAccordion">
+                        <div class="accordion-body">
+                            The hostname is a single word that identifies your system to the network. If you don't know what your
+                            hostname should be, consult your network administrator. If you are setting up your own home network, you
+                            can make something up here.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#Install5" aria-expanded="false" aria-controls="Install5">
+                            5 - Enter the domain name 
+                        </button>
+                    </h2>
+
+                    <div id="Install5" class="accordion-collapse collapse" data-bs-parent="#installAccordion">
+                        <div class="accordion-body">
+                            <strong>This is an optional value. </strong>The domain name is the part of your Internet address to the right of your host name. It is often something
+                            that ends in .com, .net, .edu, or .org. If you are setting up a home network, you can make something up, but
+                            make sure you use the same domain name on all your computers.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#Install6" aria-expanded="false" aria-controls="Install6">
+                            6 - Full name for the new user
+                        </button>
+                    </h2>
+
+                    <div id="Install6" class="accordion-collapse collapse" data-bs-parent="#installAccordion">
+                        <div class="accordion-body">
+                            Please enter the real name of this user. This information will be used for instance as default origin for emails
+                            sent by this user as well as any program which displays or uses the user's real name. Your full name is a
+                            reasonable choice.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#Install7" aria-expanded="false" aria-controls="Install7">
+                            7 - Username for your account
+                        </button>
+                    </h2>
+
+                    <div id="Install7" class="accordion-collapse collapse" data-bs-parent="#installAccordion">
+                        <div class="accordion-body">
+                            Select a username for the new account. Your first name is a reasonable choice. The username should start
+                            with a lower-case letter, which can be followed by any combination of numbers and more lower-case letters. 
+                            <br><br>
+                            This is the name of your home directory.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#Install8" aria-expanded="false" aria-controls="Install8">
+                            8 - Choose a password for the new user
+                        </button>
+                    </h2>
+
+                    <div id="Install8" class="accordion-collapse collapse" data-bs-parent="#installAccordion">
+                        <div class="accordion-body">
+                            Set the password for the new user account. This is used for log into the desktop and for superuser privileges access.
+                            <br><br>
+                            A good password will contain a mixture of letters, numbers and punctuation and should be changed at
+                            regular intervals.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#Install9" aria-expanded="false" aria-controls="Install9">
+                            9 - Select your time zone
+                        </button>
+                    </h2>
+
+                    <div id="Install9" class="accordion-collapse collapse" data-bs-parent="#installAccordion">
+                        <div class="accordion-body">
+                            Select the time zone for your ubication. If the desired time zone is not listed, then please go back to the step "Choose language" 
+                            and select a country that uses the desired time zone (the country where you live or are located).
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#Install10" aria-expanded="false" aria-controls="Install10">
+                            10 - Partition disks
+                        </button>
+                    </h2>
+
+                    <div id="Install10" class="accordion-collapse collapse" data-bs-parent="#installAccordion">
+                        <div class="accordion-body">
+                            <div class="mb-3">The two more important options are the following</div>
+                            <ul>
+                                <li class="mb-3">
+                                    <strong>Guided - Use entire disk</strong>: This option deletes all existing partitions on the hard drive and creates 
+                                    new ones so that the computer only has one operating system.
+
+                                    <div class="alert alert-primary mt-3" role="alert">
+                                        <strong>Note</strong>: If you have any other operating system it will be removed.
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>Manual</strong>: With this option you can configure the partitions manually and thus maintain another operating 
+                                    system if it exists. Partitions can be deleted and resized to make room for the new system.
+
+                                    <div class="alert alert-warning mt-3" role="alert">
+                                        <strong>Warning</strong>: Do not delete the NTFS (Windows) or APFS (MacOS) partition types if you want to keep an existing operating system.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#Install11" aria-expanded="false" aria-controls="Install11">
+                            11 - Configure the package manager
+                        </button>
+                    </h2>
+
+                    <div id="Install11" class="accordion-collapse collapse" data-bs-parent="#installAccordion">
+                        <div class="accordion-body">
+                            In this part of the installation, the most normal thing is to leave the options that appear by default, only if you want to select a 
+                            different option should you change the default options.
+
+                            <div class="alert alert-warning mt-3" role="alert">
+                                <strong>Warning</strong>: You should always select the option to use a network mirror. Otherwise you will not have 
+                                the package manager for system updates, application installation, etc.
+                            </div>
+
+                            <div class="alert alert-primary mt-3" role="alert">
+                                <strong>Note</strong>: On the proxy entry screen it is generally not mandatory to enter any value.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#Install12" aria-expanded="false" aria-controls="Install12">
+                            12 - Install the GRUB boot loader
+                        </button>
+                    </h2>
+
+                    <div id="Install12" class="accordion-collapse collapse" data-bs-parent="#installAccordion">
+                        <div class="accordion-body">
+                            The boot loader is shown when the system boots and you can select some options like run Obision, run other operating system (if exists) or run some utilities.
+
+                            <div class="alert alert-primary mt-3" role="alert">
+                                <strong>Note</strong>: You must select install the GRUB loader always otherwise the system may not boot.
+                            </div>
+
+                            <div class="alert alert-primary" role="alert">
+                                <strong>Note 2</strong>: Generally the target disk for install GRUB will be <code>/dev/sda</code> or <code>/dev/nvme0</code>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

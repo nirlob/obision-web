@@ -1,0 +1,12 @@
+<div th:fragment="application(icon, name, description, url)" th:with="link=${link} ?: 'true'" class="d-flex mb-3">
+    <img th:src="${icon}" th:alt="${name}" class="size-icon-normal">
+
+    <div class="ps-2">
+        <h5 class="mb-0">
+            <a th:if="${link == 'true'}" th:href="${url}" target="_blank">[[${name}]]</a>
+            <span th:if="${link == 'false'}">[[${name}]]</span>
+        </h5>
+
+        <div class="small">[(${description})]</div>
+    </div>
+</div>

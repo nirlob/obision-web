@@ -1,0 +1,50 @@
+<div th:fragment="applications" class="band-content p-4">
+    <h2>
+        Applications
+    </h2>
+
+    <div th:replace="~{:: application(icon='images/icons/applications/firefox.png', name='Firefox',
+        description='Get all the speed and tools with none of the invasions of privacy. Firefox Browser collects so little data about you, we don’t even require your email address to download. That’s because unlike other browsers, we have no financial stake in following you around the web.', url='https://www.mozilla.org/firefox/')}"></div>
+    <div th:replace="~{:: application(icon='images/icons/applications/evolution.svg', name='Evolution',
+        description='Evolution is a personal information management application that provides integrated mail, calendaring and address book functionality. Check the Privacy Policy sub-page for a general information about user data usage.', url='https://wiki.gnome.org/Apps/Evolution')}"></div>
+    <div th:replace="~{:: application(icon='images/icons/applications/maps.png', name='Maps',
+        description='Maps gives you quick access to maps all across the world. We use the collaborative OpenStreetMap database, enabling our users to make smaller changes to places and points-of-interests.', url='https://wiki.gnome.org/Apps/Maps')}"></div>
+    <div th:replace="~{:: application(icon='images/icons/applications/contacts.png', name='Contacts',
+        description='Contacts is GNOME\'s integrated address book', url='https://wiki.gnome.org/Apps/Contacts')}"></div>
+    <div th:replace="~{:: application(icon='images/icons/applications/photos.png', name='Photos',
+        description='Access, organize and share your photos on GNOME. A simple and elegant replacement for using a file manager to deal with photos. Enhance, crop and edit in a snap. Seamless cloud integration is offered through GNOME Online Accounts.', url='https://wiki.gnome.org/Apps/Photos')}"></div>
+    <div th:replace="~{:: application(icon='images/icons/applications/videos.png', name='Videos',
+        description='Also known as Totem, Videos is a movie player designed for GNOME. Features plugin support. Included as core application since GNOME 2.10 release.', url='https://wiki.gnome.org/Apps/Videos')}"></div>
+
+    <div class="w-100 text-center">
+        <a class="btn btn-primary btn-collapse-hidden " data-bs-toggle="collapse" 
+            href="#collapseApplications" role="button" aria-expanded="false" aria-controls="collapseApplications">
+            Show more applications...
+        </a>
+    </div>
+
+    <div class="collapse" id="collapseApplications">
+        <div th:replace="~{:: application(icon='/images/icons/applications/music.png', name='Music',
+            description='Music is the new GNOME music playing application. It aims to combine an elegant and immersive browsing experience with simple and straightforward controls.', url='https://wiki.gnome.org/Apps/Music')}"></div>
+        <div th:replace="~{:: application(icon='/images/icons/applications/weather.svg', name='Weather',
+            description='A small application that allows you to monitor the current weather conditions for your city, or anywhere in the world, and to access updated forecasts provided by various internet services.', url='https://wiki.gnome.org/Apps/Weather')}"></div>
+        <div th:replace="~{:: application(icon='/images/icons/applications/drawing.png', name='Drawing',
+            description='This free basic raster image editor is similar to Microsoft Paint, but aiming at the GNOME desktop.', url='https://maoschanz.github.io/drawing/')}"></div>
+        <div th:replace="~{:: application(icon='/images/icons/applications/files.png', name='Files',
+            description='Simple file manager for GNOME. Provides the user with a simple way to navigate and manage files.', url='https://wiki.gnome.org/action/show/Apps/Files?action=show&redirect=Apps%2FNautilus')}"></div>
+        <div th:replace="~{:: application(icon='/images/icons/applications/software.png', name='Software store',
+            description='Install and update apps. Software allows you to find and install new apps and system extensions and remove existing installed apps.', url='https://apps.gnome.org/en/Software/')}"></div>
+        <div th:replace="~{:: application(icon='/images/icons/applications/gedit.svg', name='Gedit',
+            description='Gedit is an easy-to-use and general-purpose text editor. Its development started in 1998, at the beginnings of the GNOME project, with a good integration with that desktop environment.', url='https://wiki.gnome.org/Apps/Gedit')}"></div>
+    </div>
+</div>
+
+<div th:fragment="application(icon, name, description, url)" class="mb-2 p-0">
+    <a th:href="${url}" class="d-flex application-long p-2 btn btn-primary" target="_blank">
+        <img th:src="${icon}" th:alt="${name}" class="size-icon-normal">
+        <div class="ps-2">
+            <h5 class="mb-0"><strong>[[${name}]]</strong></h5>
+            <div class="small" th:text="${description}"></div>
+        </div>
+    </a>
+</div>

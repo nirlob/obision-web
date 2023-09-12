@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="~{fragments/header :: head}"></head>
+
+<body>
+    <div th:replace="~{fragments/header :: navbar}"></div>
+
+    <div class="band-content p-4">
+        <h1>Contact</h1>
+    </div>
+
+    <div class="band-content p-4">
+        <form th:action="@{/contact}" method="post" th:object="${contact}">
+            <div class="mb-3">
+                <label for="from" class="form-label">Your email</label>
+                <input type="text" id="from" class="form-control" th:field="*{from}" />
+                <div class="small text-danger fw-bold" th:if="${#fields.hasErrors('from')}" th:errors="*{from}"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" id="subject" class="form-control" th:field="*{subject}" />
+                <div class="small text-danger fw-bold" th:if="${#fields.hasErrors('subject')}" th:errors="*{subject}"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="body" class="form-label">Body</label>
+                <textarea id="body" class="form-control" th:field="*{body}" rows="10"></textarea>
+                <div class="small text-danger fw-bold" th:if="${#fields.hasErrors('body')}" th:errors="*{body}"></div>
+            </div>
+
+            <div class="text-end">
+                <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+        </form>
+    </div>
+
+    <th:block th:if="${error}">
+        <div th:replace="~{fragments/toast :: error}"></div>
+    </th:block>
+
+    <th:block th:if="${success}">
+        <div th:replace="~{fragments/toast :: success}"></div>
+    </th:block>
+
+<!--    <div th:replace="~{fragments/footer}"></div>-->
+</body>
+</html>

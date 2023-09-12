@@ -1,0 +1,15 @@
+<div th:fragment="logos" class="band-content p-4">
+    <h2>
+        Logos
+    </h2>
+
+    <div th:replace="~{:: logo(icon='images/logos/logo-64.png', name='handischlereth',
+        url='https://pixabay.com/es/users/andischlereth-10453737/')}">
+    </div>
+</div>
+
+<div th:fragment="logo(icon, name, url)" class="col m-2 p-0">
+    <div>
+        <img th:src="${icon}" th:alt="${name}"> - <a th:href="${icon}" th:text="${name}" target="_blank"></a>
+    </div>
+</div>

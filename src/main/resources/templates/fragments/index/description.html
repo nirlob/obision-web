@@ -1,0 +1,31 @@
+<div th:fragment="description" class="band-content p-4">
+    <h1 class="mt-0">
+        A Debian based Linux distribution
+    </h1>
+
+    <p>
+        Obision is a distribution of a customized  <a href="https://www.debian.org/" target="_blank">Debian 12</a> installation that uses the
+        <a href="https://www.linux.org/" target="_blank">Linux</a> kernel and <a href="https://www.gnome.org/" target="_blank">GNOME</a> desktop environment.
+    </p>
+
+    <p>
+        It contains some <a href="#applications">applications</a> and <a href="#extensions">desktop extensions</a> installed and configured for a better user experience.
+    </p>
+
+    <a class="btn p-0" target="_blank" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images/screenshots/screenshot-3.png" data-bs-title="Main desktop">
+        <img src="/images/screenshots/screenshot-computer.png" alt="Screenshot" width="100%" height="auto">
+    </a>
+
+    <div class="my-2 d-flex flex-row-reverse">
+        <button type="button" class="btn btn-primary btn-lg" th:onclick="download([[${lastVersion}]])"><strong>Download v[[${lastVersion}]]</strong></button>
+    </div>
+
+    <p>You can download the <a href="https://www.debian.org/download" target="_blank">original Debian ISO installer</a> if you want to test the original installation and other desktops.</p>
+
+    <p class="mt-2">Obision is designed for desktop using GNOME. There are many other desktop alternatives like
+        <a href="https://kde.org" target="_blank">KDE</a>, <a href="https://www.xfce.org/" target="_blank">XFCE</a>,
+        <a href="https://mate-desktop.org" target="_blank">MATE</a>, etc. all of them very good and included in other Linux distributions.
+    </p>
+
+    <p>Obision is developed for computers with AMD or Intel CPUs of 64 bits only.</p>
+</div>
