@@ -11,7 +11,7 @@
 	<groupId>com.obision</groupId>
 	<artifactId>web</artifactId>
 	<version>0.1</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>obision-web</name>
 	<description>Web of the Obision project</description>
 	<properties>
@@ -29,12 +29,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
-                </exclusion>
-            </exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.mariadb.jdbc</groupId>
