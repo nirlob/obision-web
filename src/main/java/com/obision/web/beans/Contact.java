@@ -1,4 +1,4 @@
-package com.obision.web.pojos;
+package com.obision.web.beans;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;

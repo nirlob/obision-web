@@ -7,8 +7,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.obision.web.beans.Contact;
 import com.obision.web.models.Release;
-import com.obision.web.pojos.Contact;
 import com.obision.web.repositories.ReleasesRepository;
 import com.obision.web.services.MailService;
 

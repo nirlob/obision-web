@@ -43,7 +43,7 @@ public class DownloadController {
             log.warn("Can't save download to database", e);
         }
 
-        File downloadFile = new File("/home/jose/releases/obision-" + version + ".iso");
+        File downloadFile = new File("/var/obision/obision-" + version + ".iso");
         InputStreamResource resource = new InputStreamResource(new FileInputStream(downloadFile));
 
         HttpHeaders header = new HttpHeaders();
