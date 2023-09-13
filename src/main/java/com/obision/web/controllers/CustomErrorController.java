@@ -18,7 +18,11 @@ public class CustomErrorController implements ErrorController {
         Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
         Exception e = (Exception) request.getAttribute(RequestDispatcher.ERROR_EXCEPTION);
 
-        model.addAttribute("error", e.getCause().getMessage());
+        if (e != null) {
+            model.addAttribute("error", e.getCause().getMessage());
+        } else {
+            model.addAttribute("error", "Undefined error");
+        }
 
         if (status != null) {
             int statusCode = Integer.parseInt(status.toString());
