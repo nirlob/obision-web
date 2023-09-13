@@ -9,9 +9,9 @@ pipeline {
     skipDefaultCheckout(true)
   }
 
-  environment {
+  // environment {
     // JAVA_HOME = '/var/jenkins_home/tools/hudson.model.JDK/jdk17/jdk-17'
-  }
+  // }
 
   stages{
     stage ('Checkout'){
