@@ -19,7 +19,7 @@ public class CustomErrorController implements ErrorController {
         Exception e = (Exception) request.getAttribute(RequestDispatcher.ERROR_EXCEPTION);
 
         if (e != null) {
-            model.addAttribute("error", e.getCause().getMessage());
+            model.addAttribute("error", e.getMessage());
         } else {
             model.addAttribute("error", "Undefined error");
         }

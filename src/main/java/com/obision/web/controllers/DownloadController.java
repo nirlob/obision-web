@@ -3,6 +3,8 @@ package com.obision.web.controllers;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.apachecommons.CommonsLog;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -24,6 +26,9 @@ import java.io.FileInputStream;
 @RequestMapping("/downloads")
 @CommonsLog
 public class DownloadController {
+    @Value("${downloads.path}")
+    private String downloadsPath;
+    
     private final DownloadsRepository downloadsRepository;
 
     public DownloadController(DownloadsRepository downloadsRepository) {
@@ -43,8 +48,9 @@ public class DownloadController {
             log.warn("Can't save download to database", e);
         }
 
-        File downloadFile = new File("/var/obision/obision-" + version + ".iso");
-        InputStreamResource resource = new InputStreamResource(new FileInputStream(downloadFile));
+        File downloadFile = new File(downloadsPath + "/obision-" + version + ".iso");
+        // InputStreamResource resource = new InputStreamResource(new FileInputStream(downloadFile));
+        FileSystemResource resource = new FileSystemResource(downloadFile); 
 
         HttpHeaders header = new HttpHeaders();
         header.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + downloadFile.getName());
