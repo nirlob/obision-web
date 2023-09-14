@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.obision.web.models.Download;
 import com.obision.web.repositories.DownloadsRepository;
+import com.obision.web.utils.HttpUtils;
 
 
 @RestController
@@ -28,7 +29,7 @@ public class DownloadController {
         Download download = new Download();
 
         try {
-            download.setIp(request.getRemoteAddr());
+            download.setIp(HttpUtils.getRequestIP(request));
             download.setVersion(version);
 
             downloadsRepository.save(download);
