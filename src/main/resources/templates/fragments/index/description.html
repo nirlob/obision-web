@@ -17,7 +17,7 @@
     </a>
 
     <div class="my-2 d-flex flex-row-reverse">
-        <button type="button" id="buttonDownload" class="btn btn-primary btn-lg" th:onclick="download([[${lastVersion}]], 'buttonDownload')"><strong>Download v[[${lastVersion}]]</strong></button>
+        <button type="button" class="btn btn-primary btn-lg" th:onclick="downloadIso([[${lastVersion}]])"><strong>Download v[[${lastVersion}]]</strong></button>
     </div>
 
     <p>You can download the <a href="https://www.debian.org/download" target="_blank">original Debian ISO installer</a> if you want to test the original installation and other desktops.</p>
