@@ -19,6 +19,10 @@ public class Release {
     private String changes;
 
     private Date publishDate;
+
+    private String size;
+
+    private Boolean enabled;
     
     @Transient
     private Timestamp createdAt;

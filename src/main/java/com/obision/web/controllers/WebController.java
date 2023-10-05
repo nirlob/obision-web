@@ -30,6 +30,7 @@ public class WebController {
     public String index(Model model) {
         Release lastRelease = releasesRepository.findFirstByOrderByIdDesc();
         model.addAttribute("lastVersion", lastRelease.getVersion());
+        model.addAttribute("sizeVersion", lastRelease.getSize());
 
         setCommonAttributes(model);
         return "index";

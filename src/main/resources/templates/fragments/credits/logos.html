@@ -8,8 +8,11 @@
     </div>
 </div>
 
-<div th:fragment="logo(icon, name, url)" class="col m-2 p-0">
-    <div>
-        <img th:src="${icon}" th:alt="${name}"> - <a th:href="${icon}" th:text="${name}" target="_blank"></a>
-    </div>
+<div th:fragment="logo(icon, name, url)" class="mb-2 p-0">
+    <a th:href="${url}" class="d-flex application-long p-2 btn btn-primary" target="_blank">
+        <img th:src="${icon}" th:alt="${name}" class="size-icon-normal">
+        <div class="ps-2 mt-4">
+            <h5 class="mb-0"><strong>[[${name}]]</strong></h5>
+        </div>
+    </a>
 </div>
