@@ -18,9 +18,27 @@ body {
     background-color: #d0e1fd;
 }
 
-.band-content {
-    margin: auto;
-    width: 700px;
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .band-content {
+        margin: 0;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .band-content {
+        margin: auto;
+        width: 700px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .band-content {
+        margin: auto;
+        width: 700px;
+    }
 }
 
 .application-short {
