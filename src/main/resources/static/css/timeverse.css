@@ -1,0 +1,20 @@
+body {
+    margin: 20px 30%;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section {
+    margin-top: 50px;
+    text-align: justify;
+}
+
+.text-image {
+    font-size: small;
+}
