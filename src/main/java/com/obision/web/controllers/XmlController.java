@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/", produces = "application/xml")
+@RequestMapping(path = "/xml", produces = "application/xml")
 public class XmlController {
     @GetMapping("/sitemap.xml")
     public ResponseEntity<String> sitemap() {
