@@ -18,9 +18,10 @@ public class MailService {
         try {
             SimpleMailMessage message = new SimpleMailMessage();
             message.setFrom(from); // If from account is incorrect throws exception
+            // message.setTo("obision04@gmail.com");
             message.setTo("contact@obision.com");
             message.setSubject(subject);
-            message.setText(body);
+            message.setText("Sender email: " + from + "\n\n" + body);
 
             javaMailSender.send(message);
 
