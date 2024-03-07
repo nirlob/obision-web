@@ -1,14 +1,18 @@
-<div th:fragment="logos" class="band-content p-4">
+<div th:fragment="images" class="band-content p-4">
     <h2>
-        Logos
+        Images
     </h2>
 
-    <div th:replace="~{:: logo(icon='images/logos/logo-64.png', name='handischlereth',
+    <div th:replace="~{:: image(icon='images/images/logo-64.png', name='handischlereth',
         url='https://pixabay.com/es/users/andischlereth-10453737/')}">
+    </div>
+
+    <div th:replace="~{:: image(icon='images/images/user.png', name='Md Tanvirul Haque',
+        url='https://www.flaticon.com/authors/md-tanvirul-haque')}">
     </div>
 </div>
 
-<div th:fragment="logo(icon, name, url)" class="mb-2 p-0">
+<div th:fragment="image(icon, name, url)" class="mb-2 p-0">
     <a th:href="${url}" class="d-flex application-long p-2 btn btn-primary" target="_blank">
         <img th:src="${icon}" th:alt="${name}" class="size-icon-normal">
         <div class="ps-2 mt-4">
