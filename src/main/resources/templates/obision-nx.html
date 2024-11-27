@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="~{fragments/header :: head('Obision NX')}"></head>
+
+<body>
+    <div th:replace="~{fragments/header :: navbar}"></div>
+
+    <div class="band-background-white">
+        <div class="band-content p-4">
+            <h1>Obision NX</h1>
+
+            <p>Obision NX is an experimental release of Obision based in the Debian testing repositories. This is not for production porpoises but have the latest software of the new Debian version.</p>
+            <div class="mt-2 mb-4 text-end pe-4">
+                <button type="button" class="btn btn-primary btn-lg" th:onclick="downloadIso([[${lastVersion}]]+'-nx')"><strong>Download NX v[[${lastVersion}]] ([[${sizeVersion}]])</strong></button>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="~{fragments/modals :: imageModal}"></div>
+
+    <script src="js/modals.js"></script>
+    <script src="js/downloads.js"></script>
+
+<!--    <div th:replace="~{fragments/footer}"></div> -->
+</body>
+</html>

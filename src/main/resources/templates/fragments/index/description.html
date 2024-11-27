@@ -16,8 +16,11 @@
         <img src="/images/screenshots/screenshot-computer.png" alt="Screenshot" width="100%" height="auto">
     </a>
 
-    <div class="mt-2 mb-4 d-flex flex-row-reverse">
+    <div class="mt-2 mb-4 text-end pe-4">
         <button type="button" class="btn btn-primary btn-lg" th:onclick="downloadIso([[${lastVersion}]])"><strong>Download v[[${lastVersion}]] ([[${sizeVersion}]])</strong></button>
+        <div>
+        <a class="small" href="/obision-nx">Alternativelly you can download Obision NX</a>
+        </div>
     </div>
 
     <p>You can download the <a href="https://www.debian.org/download" target="_blank">original Debian ISO installer</a> if you want to test the original installation and other desktops.</p>

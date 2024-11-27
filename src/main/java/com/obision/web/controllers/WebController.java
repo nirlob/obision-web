@@ -75,6 +75,16 @@ public class WebController {
         return "install";
     }
 
+    @GetMapping("/obision-nx")
+    public String obisionNx(Model model) {
+        Release lastRelease = releasesRepository.findFirstByOrderByIdDesc();
+        model.addAttribute("lastVersion", lastRelease.getVersion());
+        model.addAttribute("sizeVersion", lastRelease.getSize());
+
+        setCommonAttributes(model);
+        return "obision-nx";
+    }
+
     @GetMapping("/documentation")
     public String documentation(Model model) {
         setCommonAttributes(model);
