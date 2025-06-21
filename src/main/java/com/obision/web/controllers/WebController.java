@@ -91,11 +91,6 @@ public class WebController {
         return "documentation";
     }
 
-    @GetMapping("/timeverse")
-    public String timeverse(Model model) {
-        return "timeverse";
-    }
-
     @PostMapping("/contact")
     public String contactSubmit(@Valid Contact contact, BindingResult bindingResult, Model model) {
         if (!bindingResult.hasErrors()) {

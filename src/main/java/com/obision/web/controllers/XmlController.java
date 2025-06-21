@@ -22,7 +22,6 @@ public class XmlController {
         stringBuilder.append("    <loc>https://www.obision.com/install</loc>");
         stringBuilder.append("    <loc>https://www.obision.com/releases</loc>");
         stringBuilder.append("    <loc>https://www.obision.com/screenshots</loc>");
-        stringBuilder.append("    <loc>https://www.obision.com/timeverse</loc>");
         stringBuilder.append("  </url>");
         stringBuilder.append("</urlset>");
 
