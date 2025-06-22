@@ -6,17 +6,16 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Current File",
-            "request": "launch",
-            "mainClass": "${file}"
-        },
-        {
-            "type": "java",
             "name": "WebApplication",
             "request": "launch",
             "mainClass": "com.obision.web.WebApplication",
             "projectName": "web",
-            "args": "-P dev"
+            "args": "--spring.profiles.active=dev",
+            "env": {
+                "DB_DATASOURCE_URL": "jdbc:mariadb://82.223.118.58:47101/obision",
+                "DB_DATASOURCE_USERNAME": "obision",
+                "DB_DATASOURCE_PASSWORD": "obision"
+            },
         }
     ]
 }
