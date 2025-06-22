@@ -14,7 +14,11 @@
             "env": {
                 "DB_DATASOURCE_URL": "jdbc:mariadb://82.223.118.58:47101/obision",
                 "DB_DATASOURCE_USERNAME": "obision",
-                "DB_DATASOURCE_PASSWORD": "obision"
+                "DB_DATASOURCE_PASSWORD": "obision",
+                "MAIL_HOST": "smtp.obision.com",
+                "MAIL_PORT": "587",
+                "MAIL_USERNAME": "obision04@gmail.com",
+                "MAIL_PASSWORD": "owdm qjeb upfe tofk",
             },
         }
     ]
